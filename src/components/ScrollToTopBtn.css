@@ -1,0 +1,26 @@
+/* ════════════════════════════════════════════
+   ScrollToTopBtn.css — Bouton retour en haut
+════════════════════════════════════════════ */
+  .scroll-top-btn {
+    @apply fixed bottom-8 right-8 z-[999] flex items-center justify-center
+           w-[46px] h-[46px] rounded-full border-none cursor-pointer text-white bg-primary;
+    box-shadow: 0 4px 16px rgba(74,124,89,.4);
+    /* Caché par défaut, rendu visible via JS (.visible) */
+    opacity: 0; transform: translateY(20px); pointer-events: none;
+    transition: all .3s ease;
+  }
+
+  /* ── État visible (ajouté par ScrollToTopBtn.tsx via JS) ── */
+  .scroll-top-btn.visible {
+    opacity: 1; transform: translateY(0); pointer-events: auto;
+  }
+
+  .scroll-top-btn:hover {
+    @apply bg-primary-dark;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74,124,89,.5);
+  }
+
+  @media (max-width: 600px) {
+    .scroll-top-btn { bottom: 1.25rem; right: 1.25rem; width: 42px; height: 42px; }
+  }

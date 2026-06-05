@@ -1,0 +1,43 @@
+/* ════════════════════════════════════════════
+   ImageSlider.css — Carrousel + mode pleine hauteur
+════════════════════════════════════════════ */
+  .slider { @apply relative overflow-hidden rounded-md shadow-md; }
+
+  /* ── Mode pleine hauteur (section Paysagiste, Home) ── */
+  .slider--fill-height { @apply flex flex-col; min-height: 280px; }
+  .slider--fill-height .slider__track { flex: 1; }
+  .slider--fill-height .slider__slide { @apply flex flex-col; }
+  .slider--fill-height .slider__slide img { @apply w-full object-cover; flex: 1; height: 100%; }
+
+  /* ── Track & slides ── */
+  .slider__track { @apply flex; transition: transform .55s cubic-bezier(.4,0,.2,1); }
+  .slider__slide { @apply min-w-full; }
+  .slider__slide img { @apply w-full object-cover; height: 420px; }
+  @media (max-width: 600px) { .slider__slide img { height: 260px; } }
+
+  /* ── Boutons précédent / suivant ── */
+  .slider__btn {
+    @apply absolute top-1/2 -translate-y-1/2 z-[2] flex items-center justify-center
+           w-[42px] h-[42px] rounded-full border-none cursor-pointer transition-all text-brand;
+    background: rgba(255,255,255,.88);
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .slider__btn:hover { @apply bg-primary text-white shadow-md; }
+  .slider__btn--prev { left: .75rem; }
+  .slider__btn--next { right: .75rem; }
+
+  /* ── Points de pagination ── */
+  .slider__controls { @apply absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-[2]; }
+  .slider__dot {
+    @apply w-[9px] h-[9px] rounded-full cursor-pointer p-0 transition-all;
+    background: rgba(255,255,255,.45);
+    border: 2px solid rgba(255,255,255,.7);
+  }
+  .slider__dot.active { @apply bg-white; border-color: white; transform: scale(1.2); }
+
+  /* ── Wrapper pleine hauteur utilisé dans Home (about-grid) ── */
+  .about-grid__slider-wrap { flex: 1; min-height: 0; @apply flex flex-col; }
+  .about-grid__slider-wrap .slider { flex: 1; @apply flex flex-col; min-height: 280px; }
+  .about-grid__slider-wrap .slider__track { flex: 1; }
+  .about-grid__slider-wrap .slider__slide { @apply flex flex-col; }
+  @media (max-width: 900px) { .about-grid__slider-wrap { min-height: 320px; } }

@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import './Header.css'
 import { NavLink } from 'react-router-dom'
-
 
 const leftLinks = [
   { to: '/', label: 'Accueil' },

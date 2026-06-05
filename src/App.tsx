@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopBtn from './components/ScrollToTopBtn'
+import FloatingContact from './components/FloatingContact'
 import Home from './pages/Home'
 import SavoirFaire from './pages/SavoirFaire'
 import Conception from './pages/Conception'
@@ -8,7 +11,6 @@ import Realisations from './pages/Realisations'
 import Entretien from './pages/Entretien'
 import Contact from './pages/Contact'
 import MentionsLegales from './pages/MentionsLegales'
-import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <FloatingContact />
+      <ScrollToTopBtn />
     </BrowserRouter>
   )
 }

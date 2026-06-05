@@ -1,0 +1,45 @@
+/* ════════════════════════════════════════════
+   FloatingContact.css — Onglets fixes droite
+   Téléphone + Contactez-nous
+════════════════════════════════════════════ */
+  /* ── Conteneur fixe sur le bord droit ── */
+  .floating-contact {
+    @apply fixed right-0 z-[998] flex flex-col;
+    top: 50%; transform: translateY(-50%); gap: 4px;
+  }
+  @media (max-width: 600px) {
+    .floating-contact { top: auto; bottom: 5rem; transform: none; gap: 3px; }
+  }
+
+  /* ── Onglet (s'étend au survol) ── */
+  .floating-contact__tab {
+    @apply flex items-center overflow-hidden cursor-pointer no-underline
+           font-body font-bold text-[0.82rem] tracking-[0.04em] uppercase text-white px-[14px];
+    height: 48px; max-width: 48px;
+    border-radius: 6px 0 0 6px;
+    transition: max-width .35s cubic-bezier(.4,0,.2,1), box-shadow .2s ease;
+    box-shadow: -3px 2px 12px rgba(0,0,0,.18);
+  }
+  .floating-contact__tab:hover {
+    max-width: 220px;
+    box-shadow: -4px 3px 18px rgba(0,0,0,.28);
+  }
+
+  /* ── Icône ── */
+  .floating-contact__tab i { @apply text-[1rem] shrink-0 w-5 text-center; }
+
+  /* ── Texte (masqué, révélé au survol) ── */
+  .floating-contact__tab span {
+    @apply ml-[10px] pointer-events-none;
+    opacity: 0; transition: opacity .2s ease .1s;
+  }
+  .floating-contact__tab:hover span { opacity: 1; }
+
+  /* ── Variantes couleurs ── */
+  .floating-contact__tab--phone   { @apply bg-primary hover:bg-primary-dark; }
+  .floating-contact__tab--contact { background: #2d5238; }
+  .floating-contact__tab--contact:hover { background: #1e2d24; }
+
+  @media (max-width: 600px) {
+    .floating-contact__tab { height: 42px; max-width: 42px; padding: 0 11px; }
+  }

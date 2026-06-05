@@ -1,0 +1,51 @@
+/* ════════════════════════════════════════════
+   Footer.css
+════════════════════════════════════════════ */
+  .footer { @apply text-[rgba(255,255,255,0.82)]; background: #1a2920; }
+  .footer__top { padding: 4.5rem 0 3.5rem; }
+
+  .footer__grid {
+    @apply max-w-site mx-auto px-8 grid gap-12;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+  }
+  @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+  /* ── Logo ── */
+  .footer__logo img { height: 65px; @apply mb-5; filter: brightness(0) invert(1); opacity: .9; }
+
+  /* ── Description ── */
+  .footer__desc { @apply text-[0.88rem] leading-[1.85]; color: rgba(255,255,255,.65); }
+  .footer__desc a { @apply text-accent transition-opacity hover:opacity-80; }
+
+  /* ── Titre de colonne ── */
+  .footer__title { @apply text-white font-body font-bold text-[0.78rem] uppercase tracking-[0.12em] mb-6; }
+
+  /* ── Liste de contact ── */
+  .footer__contact-list { @apply flex flex-col gap-[0.85rem] text-[0.88rem]; }
+  .footer__contact-list li { @apply flex items-start gap-[0.7rem] leading-[1.55]; }
+  .footer__icon { @apply text-accent w-4 shrink-0 mt-[0.2rem] text-[0.85rem] text-center; }
+  .footer__contact-list a { @apply transition-colors hover:text-accent; color: rgba(255,255,255,.82); }
+
+  /* ── Réseaux sociaux ── */
+  .footer__social { @apply flex gap-[0.65rem] mt-6; }
+  .footer__social a {
+    @apply flex items-center justify-center w-9 h-9 rounded-full text-white
+           text-[0.88rem] transition-all;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .footer__social a:hover {
+    background: #4a7c59; border-color: #4a7c59; transform: translateY(-2px);
+  }
+
+  /* ── Carte Google Maps ── */
+  .footer__map iframe { @apply w-full rounded-md border-none; height: 200px; }
+
+  /* ── Barre inférieure ── */
+  .footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 1.4rem 0; }
+  .footer__bottom-inner {
+    @apply max-w-site mx-auto px-8 flex justify-between items-center
+           flex-wrap gap-3 text-[0.8rem];
+    color: rgba(255,255,255,.42);
+  }
+  .footer__bottom-inner a { @apply transition-colors hover:text-accent; color: rgba(255,255,255,.55); }

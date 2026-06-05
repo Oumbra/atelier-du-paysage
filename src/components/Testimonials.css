@@ -1,0 +1,41 @@
+/* ════════════════════════════════════════════
+   Testimonials.css — Section avis clients
+════════════════════════════════════════════ */
+  /* ── Section avec image de fond et parallaxe ── */
+  .testimonials {
+    @apply relative py-20 text-white bg-fixed bg-cover bg-center;
+    background-image: url('https://atelierdupaysage17.fr/wp-content/uploads/2024/07/asset-9.webp');
+  }
+  /* Overlay sombre pour lisibilité */
+  .testimonials::before {
+    content: ''; @apply absolute inset-0 pointer-events-none;
+    background: rgba(20,40,28,.87);
+  }
+  .testimonials .container { @apply relative z-[1]; }
+
+  /* ── Contenu centré ── */
+  .testimonials__inner { @apply relative max-w-[800px] mx-auto text-center; }
+  .testimonials__dots  { @apply flex justify-center gap-2 mt-8; }
+  .testimonials__review-link {
+    @apply inline-block mt-8 text-accent text-[0.88rem] underline font-semibold
+           transition-opacity hover:opacity-75;
+  }
+
+  /* ── Slides (animation fadeInUp définie dans index.css) ── */
+  .testimonial-slide { display: none; animation: fadeInUp .45s ease; }
+  .testimonial-slide.active { display: block; }
+
+  /* ── Citation ── */
+  .testimonial-quote {
+    @apply text-[1.05rem] leading-[1.85] mb-6 italic px-4 relative;
+    opacity: .95;
+  }
+  .testimonial-quote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    @apply text-[5rem] text-accent;
+    line-height: 0; vertical-align: -.85rem; margin-right: .15rem; opacity: .7;
+  }
+
+  /* ── Auteur ── */
+  .testimonial-author { @apply font-bold text-accent text-[0.88rem] uppercase tracking-[0.12em]; }

@@ -1,3 +1,5 @@
+import './BeforeAfterPair.css'
+
 interface BeforeAfterPairProps {
   beforeSrc: string
   afterSrc: string

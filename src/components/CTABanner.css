@@ -1,0 +1,9 @@
+/* ════════════════════════════════════════════
+   CTABanner.css — Bandeau d'appel à l'action
+════════════════════════════════════════════ */
+  .cta-banner {
+    @apply relative py-20 text-center text-white overflow-hidden;
+    background: linear-gradient(135deg, #4a7c59 0%, #2d5238 100%);
+  }
+  .cta-banner h2 { @apply text-white mb-4 relative; }
+  .cta-banner p  { @apply max-w-[600px] mx-auto mb-10 text-[1.05rem] relative; opacity: .9; }

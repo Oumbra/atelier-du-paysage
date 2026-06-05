@@ -1,0 +1,48 @@
+/* ════════════════════════════════════════════
+   Lightbox.css — Visionneuse plein écran avec navigation
+════════════════════════════════════════════ */
+  /* ── Fond et conteneur ── */
+  .lightbox {
+    @apply hidden fixed inset-0 z-[9999] items-center justify-center p-8;
+    background: rgba(0,0,0,.93);
+    animation: lightboxIn .2s ease;
+  }
+  .lightbox.open { display: flex; }
+
+  /* ── Bouton fermer ── */
+  .lightbox__close {
+    @apply absolute top-6 right-6 flex items-center justify-center
+           w-[42px] h-[42px] rounded-full cursor-pointer transition-all text-white;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    opacity: .85;
+  }
+  .lightbox__close:hover { opacity: 1; background: #4a7c59; border-color: #4a7c59; }
+
+  /* ── Boutons de navigation ── */
+  .lightbox__nav {
+    @apply absolute top-1/2 -translate-y-1/2 z-[1] flex items-center justify-center
+           w-[50px] h-[50px] rounded-full cursor-pointer text-white transition-all;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+  }
+  .lightbox__nav:hover { background: #4a7c59; border-color: #4a7c59; }
+  .lightbox__nav--prev { left: 1.5rem; }
+  .lightbox__nav--next { right: 1.5rem; }
+  @media (max-width: 600px) { .lightbox__nav { display: none; } }
+
+  /* ── Image ── */
+  .lightbox__img-wrap { @apply flex items-center justify-center; max-width: 90vw; max-height: 88vh; }
+  .lightbox__img-wrap img {
+    max-width: 88vw; max-height: 82vh;
+    @apply object-contain rounded-[4px] shadow-lg;
+    transition: opacity .22s ease;
+  }
+
+  /* ── Compteur (ex : 3 / 9) ── */
+  .lightbox__counter {
+    @apply absolute bottom-6 left-1/2 -translate-x-1/2 font-body font-semibold
+           text-[0.85rem] tracking-[0.08em] py-1 px-[0.9rem] rounded-[20px];
+    color: rgba(255,255,255,.7);
+    background: rgba(0,0,0,.35);
+  }

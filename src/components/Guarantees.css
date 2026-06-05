@@ -1,0 +1,24 @@
+/* ════════════════════════════════════════════
+   Guarantees.css — Cartes de garanties
+════════════════════════════════════════════ */
+  /* ── Grille 3 colonnes ── */
+  .guarantees-grid {
+    @apply grid gap-10;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  /* ── Carte ── */
+  .guarantee-card { @apply text-center px-6 py-8; }
+
+  /* ── Icône circulaire ── */
+  .guarantee-card__icon {
+    @apply w-[68px] h-[68px] bg-primary rounded-full flex items-center justify-center
+           mx-auto mb-6 text-white text-2xl transition-all;
+    box-shadow: 0 4px 16px rgba(74,124,89,.3);
+  }
+  .guarantee-card:hover .guarantee-card__icon {
+    @apply bg-primary-dark scale-[1.08];
+  }
+
+  .guarantee-card h3 { @apply mb-3 text-[1.15rem]; }
+  .guarantee-card p  { @apply text-gray-500 text-[0.95rem]; }

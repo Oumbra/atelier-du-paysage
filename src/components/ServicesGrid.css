@@ -1,0 +1,33 @@
+/* ════════════════════════════════════════════
+   ServicesGrid.css — Grille des 10 services
+════════════════════════════════════════════ */
+  /* ── Grille responsive 5 → 4 → 3 → 2 colonnes ── */
+  .services-grid {
+    @apply grid gap-5;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 900px)  { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 500px)  { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ── Carte service ── */
+  .service-item {
+    @apply rounded-lg py-[1.6rem] px-4 text-center shadow-sm cursor-default transition-all;
+    background: #f0f7f3;
+    border-top: 3px solid #4a7c59;
+  }
+  .service-item:hover {
+    @apply bg-white -translate-y-1 shadow-md;
+    border-top-color: #2d5238;
+  }
+
+  /* ── Icône Font Awesome ── */
+  .service-item__icon {
+    @apply text-[1.9rem] text-primary mb-[0.85rem] flex items-center justify-center;
+    height: 2.2rem;
+  }
+
+  /* ── Label ── */
+  .service-item h4 {
+    @apply text-[0.8rem] text-primary-dark font-bold uppercase tracking-[0.03em] leading-[1.35];
+  }

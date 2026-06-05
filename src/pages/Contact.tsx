@@ -56,7 +56,6 @@ export default function Contact() {
 
   const handleDevisSubmit = (e: FormEvent) => {
     e.preventDefault()
-    // In production: send to backend
     setDevisSuccess(true)
     setDevisForm(initialDevis)
     setTimeout(() => setDevisSuccess(false), 6000)
@@ -73,18 +72,18 @@ export default function Contact() {
     <>
       {/* PAGE HERO */}
       <section className="page-hero">
-        <div className="container">
+        <div className="max-w-site mx-auto px-8">
           <h1>Contact aménagement paysager 17</h1>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '4rem', alignItems: 'start' }}>
+      <section className="py-20">
+        <div className="max-w-site mx-auto px-8">
+          <div className="grid grid-cols-[1.4fr_1fr] gap-16 items-start md:grid-cols-1 md:gap-10">
             {/* Forms column */}
             <div>
-              <h2>Une question ? <span style={{ color: 'var(--color-primary)' }}>Contactez</span> votre paysagiste</h2>
-              <p style={{ color: 'var(--color-text-light)', marginBottom: '2rem' }}>
+              <h2>Une question ? <span className="text-primary">Contactez</span> votre paysagiste</h2>
+              <p className="text-gray-500 mb-8">
                 Vous avez un projet ou désirez un renseignement d'aménagement paysager 17 ?
                 Remplissez le formulaire ci-dessous. Nous tâcherons de vous répondre dans les meilleurs délais.
               </p>
@@ -107,7 +106,7 @@ export default function Contact() {
 
               {/* DEVIS FORM */}
               <div className={`contact-form-panel${activeTab === 'devis' ? ' active' : ''}`}>
-                <h3 style={{ marginBottom: '1.5rem' }}>Demandez un devis</h3>
+                <h3 className="mb-6">Demandez un devis</h3>
                 {devisSuccess && (
                   <div className="form-success">
                     ✓ Votre demande de devis a bien été envoyée. Nous vous recontacterons rapidement !
@@ -194,7 +193,7 @@ export default function Contact() {
 
               {/* CONTACT FORM */}
               <div className={`contact-form-panel${activeTab === 'contact' ? ' active' : ''}`}>
-                <h3 style={{ marginBottom: '1.5rem' }}>Contactez-nous</h3>
+                <h3 className="mb-6">Contactez-nous</h3>
                 {contactSuccess && (
                   <div className="form-success">
                     ✓ Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais !
@@ -273,41 +272,40 @@ export default function Contact() {
 
             {/* Info column */}
             <div>
-              <h3 style={{ marginBottom: '1.5rem' }}>Nos informations</h3>
-              <ul className="footer__contact-list" style={{ color: 'var(--color-text)' }}>
-                <li style={{ color: 'var(--color-text)', marginBottom: '0.75rem', display: 'flex', gap: '0.6rem' }}>
+              <h3 className="mb-6 text-xl font-heading font-semibold">Nos informations</h3>
+              <ul className="list-none p-0 m-0">
+                <li className="flex items-start gap-3 text-[0.95rem] py-2">
                   <span>📍</span>
                   <span><strong>Adresse :</strong> Route de la Rémigeasse, 17550 DOLUS D'OLERON</span>
                 </li>
-                <li style={{ color: 'var(--color-text)', marginBottom: '0.75rem', display: 'flex', gap: '0.6rem' }}>
+                <li className="flex items-start gap-3 text-[0.95rem] py-2">
                   <span>📞</span>
-                  <span><strong>Tél :</strong> <a href="tel:0546753210" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>05 46 75 32 10</a></span>
+                  <span><strong>Tél :</strong> <a href="tel:0546753210" className="text-primary font-semibold">05 46 75 32 10</a></span>
                 </li>
-                <li style={{ color: 'var(--color-text)', marginBottom: '0.75rem', display: 'flex', gap: '0.6rem' }}>
+                <li className="flex items-start gap-3 text-[0.95rem] py-2">
                   <span>🕐</span>
                   <span>Du lundi au vendredi de 8h30 à 18h30</span>
                 </li>
               </ul>
 
-              <div style={{ marginTop: '2rem' }}>
+              <div className="mt-8">
                 <iframe
                   title="Localisation Atelier du Paysage 17"
                   src="https://maps.google.com/maps?q=Atelier%20du%20paysage%2017&t=m&z=14&output=embed&iwloc=near"
                   width="100%"
                   height="280"
-                  style={{ border: 'none', borderRadius: 8, boxShadow: 'var(--shadow-sm)' }}
+                  className="border-0 rounded-lg shadow-sm"
                   loading="lazy"
                   allowFullScreen
                 />
               </div>
 
-              <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem' }}>
+              <div className="mt-6 flex gap-3">
                 <a
                   href="https://www.facebook.com/atelierdupaysage17/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline"
-                  style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem' }}
+                  className="btn btn-outline py-[0.6rem] px-5 text-[0.85rem]"
                 >
                   Facebook
                 </a>
@@ -315,8 +313,7 @@ export default function Contact() {
                   href="https://g.page/r/Ccj3DMR6OXOjEAE/review"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline"
-                  style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem' }}
+                  className="btn btn-outline py-[0.6rem] px-5 text-[0.85rem]"
                 >
                   Laisser un avis Google
                 </a>
